@@ -16,12 +16,11 @@ public class NyanStone extends JavaPlugin
 	
 	Logger log = Logger.getLogger("Minecraft");
 	
-	public static NyanStoneBlockListener listener = null;
+	public static RedstoneListener redstonelistener = null;
 	
 	public void onEnable()
 	{
-		listener = new NyanStoneBlockListener(this);
-		
+		redstonelistener = new RedstoneListener(this);
 		log.info(PLUGIN_NAME + " " + PLUGIN_VERSION + " Loaded!");
 	}
 	
