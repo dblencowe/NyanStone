@@ -3,8 +3,6 @@ package com.bill1993.NyanStone;
 import java.util.logging.Logger;
 
 
-import org.bukkit.event.Event;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class NyanStone extends JavaPlugin
@@ -18,13 +16,11 @@ public class NyanStone extends JavaPlugin
 	
 	Logger log = Logger.getLogger("Minecraft");
 	
-	public NyanStoneBlockListener blockListener = new NyanStoneBlockListener(this);
+	public static NyanStoneBlockListener listener = null;
 	
 	public void onEnable()
 	{
-		PluginManager pm = this.getServer().getPluginManager();
-		
-		pm.registerEvent(Event.Type.REDSTONE_CHANGE, blockListener, Event.Priority.Normal, this);
+		listener = new NyanStoneBlockListener(this);
 		
 		log.info(PLUGIN_NAME + " " + PLUGIN_VERSION + " Loaded!");
 	}

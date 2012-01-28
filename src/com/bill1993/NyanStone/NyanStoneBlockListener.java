@@ -2,19 +2,20 @@ package com.bill1993.NyanStone;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.event.block.BlockListener;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockRedstoneEvent;
 
 
-public class NyanStoneBlockListener extends BlockListener
-{
-	public NyanStone plugin;
-	
-	public NyanStoneBlockListener(NyanStone instance)
+public class NyanStoneBlockListener implements Listener
+{	
+	public NyanStoneBlockListener(NyanStone plugin)
 	{
-		plugin = instance;
+		plugin.getServer().getPluginManager().registerEvents(this, plugin);
 	}
-	
+
+	@EventHandler(priority = EventPriority.HIGH)
 	public void onBlockRedstoneChange(BlockRedstoneEvent event)
 	{      
         Material block = event.getBlock().getType();
