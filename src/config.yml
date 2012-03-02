@@ -1,0 +1,13 @@
+Toggle:
+  Netherack: true
+  Gates: true
+  Bridges: true
+Restrictions:
+  Allowed-Bridge-Blocks:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 43
+  - 98
