@@ -49,7 +49,6 @@ public class Bridge
 
 	private static void extendBridge(BlockFace direction, Block block, int state) 
 	{
-		System.out.println("1");
 		int count = 0;
 		Block left, mid = block.getRelative(direction, count), right;		
 		
