@@ -29,6 +29,7 @@ public class Bridge
 		if(isValidMaterial(block.getRelative(0, 1, 0).getType()))
 		{
 			direction = getEndSignDirection(block);
+			if(direction == null) return;
 			if(isValidBridge(direction, block.getRelative(0, 1, 0)))
 			{
 				extendBridge(direction, block.getRelative(0, 1, 0), state);
@@ -37,6 +38,7 @@ public class Bridge
 		else if(isValidMaterial(block.getRelative(0, -1, 0).getType()))
 		{
 			direction = getEndSignDirection(block);
+			if(direction == null) return;
 			if(isValidBridge(direction, block.getRelative(0, -1, 0)))
 			{
 				extendBridge(direction, block.getRelative(0, -1, 0), state);
@@ -47,7 +49,7 @@ public class Bridge
 
 	private static void extendBridge(BlockFace direction, Block block, int state) 
 	{
-		
+		System.out.println("1");
 		int count = 0;
 		Block left, mid = block.getRelative(direction, count), right;		
 		
@@ -126,7 +128,7 @@ public class Bridge
 			}
 			else if(block.getRelative(BlockFace.WEST, count).getState() instanceof Sign)
 			{
-				/*if(isEndSign(block.getRelative(BlockFace.NORTH, count))) */return BlockFace.WEST;
+				return BlockFace.WEST;
 			}
 		}
 		return null;
