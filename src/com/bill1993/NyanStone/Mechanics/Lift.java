@@ -78,8 +78,8 @@ public class Lift
 	private static Location findLiftSign(BlockFace direction, Block block)
 	{
 		int count = 0;
-		Block relativeBlock;
-		while(count < 40)
+		Block relativeBlock = block.getRelative(direction, count);
+		while(relativeBlock.getLocation().getY() < relativeBlock.getWorld().getMaxHeight() && relativeBlock.getLocation().getY() > 0)
 		{
 			count++;
 			relativeBlock = block.getRelative(direction, count);
