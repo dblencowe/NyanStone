@@ -42,4 +42,16 @@ public class Redstone
 			Bridge.toggleBridge(block, Bridge.BRIDGE_UP);
 		}
 	}
+
+	public static void TogglePumpkin(Block block, int current) 
+	{
+		if(current > 0)
+		{
+			block.setType(Material.JACK_O_LANTERN);
+		}
+		else
+		{
+			block.setType(Material.PUMPKIN);
+		}
+	}
 }

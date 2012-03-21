@@ -31,6 +31,10 @@ public class RedstoneListener implements Listener
 		{
 			Redstone.ToggleNetherrack(block, event.getNewCurrent());
 		}
+		else if(block.getType().equals(Material.PUMPKIN) || block.getType().equals(Material.JACK_O_LANTERN) && Config.allowPumpkins)
+		{
+			Redstone.TogglePumpkin(block, event.getNewCurrent());
+		}
 		else if(block.getState() instanceof Sign)
 		{
 			if(Gates.isGateSign((Sign) block.getState()))

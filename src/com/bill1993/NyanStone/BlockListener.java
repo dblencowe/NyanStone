@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 import com.bill1993.NyanStone.Mechanics.Bridge;
 import com.bill1993.NyanStone.Mechanics.Gates;
+import com.bill1993.NyanStone.Mechanics.Lift;
 
 public class BlockListener implements Listener
 {
@@ -30,7 +31,11 @@ public class BlockListener implements Listener
 			Block block = event.getClickedBlock();
 			if(block.getState() instanceof Sign)
 			{
-				if(Gates.isGateSign((Sign) block.getState()))
+				if(Lift.isLiftSign((Sign) block.getState()))
+				{
+					Lift.liftPlayer(event.getPlayer(), block);
+				}
+				else if(Gates.isGateSign((Sign) block.getState()))
 				{
 					Gates.toggleGate(block, Gates.GATE_AUTO);
 				}

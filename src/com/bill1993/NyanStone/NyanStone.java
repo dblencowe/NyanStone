@@ -13,7 +13,7 @@ public class NyanStone extends JavaPlugin
 	public static final String PLUGIN_AUTHOR = "bill1993";
 	public static final String PLUGIN_AUTHOR_REAL = "William B. Hastings";
 	public static final String PLUGIN_DESCRIPTION = "Nyancrafts Redstone Plugin!";
-	public static final String PLUGIN_VERSION = "1.3";
+	public static final String PLUGIN_VERSION = "1.2.0";
 	
 	Logger log = Logger.getLogger("Minecraft");
 	

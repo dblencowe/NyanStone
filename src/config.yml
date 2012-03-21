@@ -2,6 +2,8 @@ Toggle:
   Netherack: true
   Gates: true
   Bridges: true
+  Lifts: true
+  Pumpkins: true
 Restrictions:
   Allowed-Bridge-Blocks:
   - 1

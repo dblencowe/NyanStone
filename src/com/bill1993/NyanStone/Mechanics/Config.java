@@ -12,6 +12,8 @@ public class Config
 	public static boolean allowNetherack;
 	public static boolean allowGates;
 	public static boolean allowBridges;
+	public static boolean allowLifts;
+	public static boolean allowPumpkins;
 
 	public static void loadConfig(Plugin plugin)
 	{
@@ -23,6 +25,8 @@ public class Config
 		allowNetherack = config.getBoolean("Toggle.Netherack");
 		allowGates = config.getBoolean("Toggle.Gates");
 		allowBridges = config.getBoolean("Toggle.Bridges");
+		allowLifts = config.getBoolean("Toggle.Lifts");
+		allowPumpkins = config.getBoolean("Toggle.Pumpkins");
 		
 		allowedBridgeBlocks = new ArrayList<Integer>();
 		allowedBridgeBlocks = config.getIntegerList("Restrictions.Allowed-Bridge-Blocks");
@@ -31,15 +35,3 @@ public class Config
 	}
 	
 }
-
-
-/*Integer[] derp = {1, 2, 3, 4, 5, 43, 98};
-
-config.addDefault("Toggle.Netherack", true);
-config.addDefault("Toggle.Gates", true);
-config.addDefault("Toggle.Bridges", true);
-config.addDefault("Restrictions.Allowed-Bridge-Blocks", Arrays.asList(derp));
-
-config.options().copyDefaults(true);
-plugin.saveConfig();
-*/
